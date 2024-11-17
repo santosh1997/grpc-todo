@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option go_package = "grpc-todo/server/generated";
+
+message GetTodosRequest {}
+
+message GetTodosResponse {
+    string id = 1;
+    string task = 2;
+}
+
+service RouteGuide {
+   rpc GetTodos(GetTodosRequest) returns (GetTodosResponse) {}
+}
